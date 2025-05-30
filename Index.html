@@ -46,7 +46,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="bg-slate-50 text-slate-800" x-data="appData()">
+<body
+  class="bg-slate-50 text-slate-800"
+  x-data="appData()"
+  x-init="init()"
+>essentials: [
+  {
+    title: 'Weather & Packing fo
     <header class="bg-teal-700 text-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -572,54 +578,56 @@
                 { name: 'One Wellness Spa (Canmore)', category: 'Relaxation', summary: 'Offers massages and hydrotherapy (Recovery Zone) very close to your Airbnb.', details: 'Offers massages and hydrotherapy (Recovery Zone). Very close to 190 Kananaskis Way. Book treatments in advance.'}
             ],
             bookings: [
-                 { item: 'Rental Car', window: 'ASAP (Now - June 2025)', priority: 'Highest', notes: 'Essential for this itinerary. Early booking secures better rates and availability, especially for September.' },
+                { item: 'Rental Car', window: 'ASAP (Now - June 2025)', priority: 'Highest', notes: 'Essential for this itinerary. Early booking secures better rates and availability, especially for September.' },
                 { item: 'Parks Canada Shuttles (Lake Louise & Moraine Lake)', window: 'April 16, 2025, 8:00 AM MDT (Initial Release); then 2 days prior at 8:00 AM MDT (Rolling Release)', priority: 'Highest', notes: 'Crucial for access. 40% of seats released April 16; 60% released 48 hours prior. Book via Parks Canada Reservation Service. These sell out extremely fast.' },
                 { item: 'Third-Party Shuttles (Backup for LL & ML)', window: 'June - August 2025 (or earlier if Parks Canada shuttle is missed)', priority: 'High', notes: 'Options: Canmore Travel, Moraine Lake Bus Company, etc. More expensive but offer alternatives. Check cancellation policies.' },
                 { item: 'Key Dining Reservations (Fine Dining/Unique Views)', window: 'June - July 2025 (60-90 days out)', priority: 'High', notes: 'e.g., Sky Bistro, änkôr, The Bison. Book via OpenTable or direct. Fairmont 360 Dome: Inquire ASAP.' },
                 { item: 'Special Activities (Via Ferrata, Gondola, Spa)', window: 'July - August 2025 (1-2 months out)', priority: 'Medium', notes: 'Book these once core hike/lake days are solidifying.' },
             ],
-            essentials: [
-                { 
-                    title: 'Weather & Packing for September', 
-                    content: 
-                        <p>Mid-September in Banff offers a mix of seasons. Expect average daytime highs around 16-17°C (61-63°F) and nighttime lows near 3-4°C (37-39°F). Warm sunny days up to 25°C (77°F) are possible, but so are crisp mornings and early snow, especially at higher elevations.</p>
-                        <strong class="font-semibold block mt-3 mb-1">Key Packing Items:</strong>
-                        <ul class="list-disc list-inside space-y-1">
-                            <li>Layered Clothing: Base layers (wool/synthetic), fleece, waterproof/windproof outer shell.</li>
-                            <li>Waterproof hiking boots (broken-in).</li>
-                            <li>Warm hat, gloves, warm socks.</li>
-                            <li>Sunscreen, sunglasses, lip balm.</li>
-                            <li>Daypack, reusable water bottle.</li>
-                            <li>Bear spray (purchase/rent in Canada).</li>
-                            <li>Camera, portable charger.</li>
-                            <li>Swimsuit (for hot springs/spa).</li>
-                        </ul>
-                     
+                essentials: [
+              {
+                {
+                  title: 'Weather & Packing for September',
+                  content: `
+                    <p>Mid-September in Banff offers a mix of seasons. Expect average highs of 16–17°C (61–63°F) and lows around 3–4°C (37–39°F). Warm sunny days up to 25°C (77°F) are possible, but crisp mornings (and even early snow at elevation) can happen.</p>
+                    <strong class="font-semibold block mt-3 mb-1">Key Packing Items:</strong>
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>Layered clothing: base layers, fleece, waterproof/windproof shell.</li>
+                      <li>Broken-in waterproof hiking boots.</li>
+                      <li>Warm hat, gloves, warm socks.</li>
+                      <li>Sunscreen, sunglasses, lip balm.</li>
+                      <li>Daypack & reusable water bottle.</li>
+                      <li>Bear spray (rent or buy in town).</li>
+                      <li>Camera & portable charger.</li>
+                      <li>Swimsuit (for hot springs/spa).</li>
+                    </ul>
+                  `,
                 },
-                { 
-                    title: 'Wildlife Safety', 
-                    content: 
-                        <p>September is an active time for wildlife. Elk are in their rutting season and can be aggressive. Bears are actively foraging before hibernation.</p>
-                        <ul class="list-disc list-inside space-y-1">
-                            <li><strong class="font-semibold">Elk:</strong> Maintain at least 30 meters (3 bus lengths) distance. Never get between a bull and his cows.</li>
-                            <li><strong class="font-semibold">Bears:</strong> Carry bear spray AND KNOW HOW TO USE IT. Keep it accessible. Make noise while hiking. Travel in groups if possible.</li>
-                            <li>Never feed wildlife.</li>
-                            <li>Keep pets leashed at all times.</li>
-                            <li>Report sightings of bears, cougars, wolves to Parks Canada (403-762-1470) when safe.</li>
-                        </ul>
-                     
+              {
+                  title: 'Wildlife Safety',
+                  content: `
+                    <p>September is an active time for wildlife. Elk are in their rutting season and can be aggressive. Bears are actively foraging before hibernation.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                      <li><strong class="font-semibold">Elk:</strong> Maintain at least 30 m (3 bus lengths) distance. Never get between a bull and his cows.</li>
+                      <li><strong class="font-semibold">Bears:</strong> Carry bear spray AND KNOW HOW TO USE IT. Keep it accessible. Make noise while hiking. Travel in groups if possible.</li>
+                      <li>Never feed wildlife.</li>
+                      <li>Keep pets leashed at all times.</li>
+                      <li>Report sightings of bears, cougars, wolves to Parks Canada (403-762-1470) when safe.</li>
+                    </ul>
+                  `,
                 },
-                { 
-                    title: 'Park Passes & Access', 
-                    content: 
-                        <ul class="list-disc list-inside space-y-1">
-                            <li><strong class="font-semibold">Banff National Park Pass:</strong> Required for entry. Purchase daily or a Discovery Pass (annual) online or at park gates.</li>
-                            <li><strong class="font-semibold">Kananaskis Conservation Pass:</strong> Required for parking in Kananaskis Country (e.g., Ha Ling Peak). Purchase online.</li>
-                            <li><strong class="font-semibold">Shuttle Reservations:</strong> Absolutely essential for Lake Louise & Moraine Lake. Book Parks Canada shuttles the moment they open (April 16, 2025, 8 AM MDT).</li>
-                            <li><strong class="font-semibold">Parking:</strong> Very limited at popular spots. Arrive early or use shuttles/public transit. Downtown Banff has paid parking.</li>
-                        </ul>
-                    
-                }
+              {
+                {
+                  title: 'Park Passes & Access',
+                  content: `
+                    <ul class="list-disc list-inside space-y-1">
+                      <li><strong class="font-semibold">Banff National Park Pass:</strong> Required for entry. Purchase daily or a Discovery Pass (annual) online or at park gates.</li>
+                      <li><strong class="font-semibold">Kananaskis Conservation Pass:</strong> Required for parking in Kananaskis Country. Purchase online.</li>
+                      <li><strong class="font-semibold">Shuttle Reservations:</strong> Absolutely essential for Lake Louise & Moraine Lake. Book Parks Canada shuttles the moment they open (April 16 2025, 8 AM MDT).</li>
+                      <li><strong class="font-semibold">Parking:</strong> Very limited at popular spots. Arrive early or use shuttles/public transit. Downtown Banff has paid parking.</li>
+                    </ul>
+                  `,
+                },
             ]
         };
 
